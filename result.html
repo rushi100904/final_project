@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Analysis Result</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<h1>Environmental Analysis Result</h1>
+
+<div class="result-card">
+
+    <img src="/{{image_path}}" class="result-img">
+
+    <h2>Detected Land Cover</h2>
+    <p class="label">{{label}}</p>
+
+    <h2>Model Confidence</h2>
+    <p class="confidence">{{confidence}}%</p>
+
+    <h2>Environmental Severity</h2>
+    {% if severity == "LOW" %}
+        <p class="severity low">LOW (Healthy Environment)</p>
+    {% elif severity == "MODERATE" %}
+        <p class="severity moderate">MODERATE (Slight Degradation)</p>
+    {% else %}
+        <p class="severity severe">SEVERE (High Degradation)</p>
+    {% endif %}
+
+    <hr>
+
+    <h2>Spectral Indices</h2>
+
+    <div class="indices">
+        <div class="box">
+            <h3>NDVI</h3>
+            <p>{{ndvi}}</p>
+            <small>Vegetation Health</small>
+        </div>
+
+        <div class="box">
+            <h3>NDBI</h3>
+            <p>{{ndbi}}</p>
+            <small>Urban/Built-up Area</small>
+        </div>
+
+        <div class="box">
+            <h3>NDWI</h3>
+            <p>{{ndwi}}</p>
+            <small>Water Content</small>
+        </div>
+    </div>
+
+    <a href="/" class="back-btn">Analyze Another Image</a>
+
+</div>
+```
+
+</div>
+
+</body>
+</html>
+
