@@ -1,6 +1,0 @@
-flask
-tensorflow
-numpy
-pillow
-matplotlib
-scikit-learn
