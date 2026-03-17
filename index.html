@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Environmental Degradation Assessment</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Environmental Degradation Assessment</h1>
+    <p class="subtitle">
+        Severity Assessment using Deep Neural Network + NDVI, NDBI, NDWI
+    </p>
+
+```
+<div class="card">
+    <h2>Upload Satellite Image</h2>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" id="imageUpload" name="image" accept="image/*" required>
+
+        <img id="preview" src="#" alt="Preview">
+
+        <br>
+        <button type="submit">Analyze Image</button>
+    </form>
+
+    <p class="note">
+    *Upload only satellite images. Mobile photos may produce incorrect results.
+    </p>
+</div>
+```
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+
+
